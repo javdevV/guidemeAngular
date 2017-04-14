@@ -1,0 +1,16 @@
+<p>
+  interests-chart works!
+</p>
+<div class="container">
+<div style="display: block">
+	<div>{{doughnutChartData | json}}</div>
+  <canvas *ngIf="shown" baseChart [data]="doughnutChartData"  
+  					[labels]="doughnutChartLabels"
+              		[chartType]="doughnutChartType"  
+              		(chartHover)="chartHovered($event)"
+              		(chartClick)="chartClicked($event)">
+              	
+  </canvas>
+</div>
+</div>
+<!-- <script src="../node_modules/chart.js/src/chart.js"></script> -->
