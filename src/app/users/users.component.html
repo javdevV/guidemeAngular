@@ -1,0 +1,11 @@
+ <h1>{{ title }}</h1>
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+
+<sebm-google-map [latitude]="lat" [longitude]="lng">
+<span *ngFor="let x of tabs">
+
+  <sebm-google-map-marker  [latitude]="x.pos_latitude" [longitude]="x.pos_longitude"></sebm-google-map-marker>
+</span>
+</sebm-google-map>
