@@ -75,14 +75,10 @@ const ROUTES = [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES), // Add routes to the app
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyBv00JLGFXVQg5HzI1V2g6JI2sn1a3S22Q' }),
      ChartsModule
   ],
-  providers: [PostsService,InterestsService,InterestsChartService],// Add the posts service
-  bootstrap: [AppComponent,NavbarComponent]
-     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBv00JLGFXVQg5HzI1V2g6JI2sn1a3S22Q'
-    })
-  ],
+ 
   providers: [PostsService,TagsServiceService,CategoriesService,UsersService,InterestsService,InterestsChartService],
   bootstrap: [AppComponent,NavbarComponent]
  })
