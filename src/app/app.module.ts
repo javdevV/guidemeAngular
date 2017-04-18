@@ -21,8 +21,10 @@ import { InterestsChartService } from './interests-chart/interests-chart.service
 import { InterestsChartComponent } from './interests-chart/interests-chart.component';
 
 import { ChartsModule } from 'ng2-charts';
+import { ChartModule } from 'ng2-chartjs2';
 
 import 'chart.js/src/chart.js';
+import { Chart2Component } from './chart2/chart2.component';
 
 
 const ROUTES = [
@@ -55,6 +57,10 @@ const ROUTES = [
   {
     path: 'interests/stat',
     component: InterestsChartComponent
+  },
+  {
+    path: 'interests/stat2',
+    component: Chart2Component
   }
 
  ];
@@ -68,7 +74,8 @@ const ROUTES = [
     PostsComponent,
     TagsComponent,
     CategoriesComponent,
-    UsersComponent
+    UsersComponent,
+    Chart2Component
   ],
   imports: [
     BrowserModule,
@@ -76,7 +83,7 @@ const ROUTES = [
     HttpModule,
     RouterModule.forRoot(ROUTES), // Add routes to the app
     AgmCoreModule.forRoot({apiKey: 'AIzaSyBv00JLGFXVQg5HzI1V2g6JI2sn1a3S22Q' }),
-     ChartsModule
+     ChartsModule,ChartModule
   ],
  
   providers: [PostsService,TagsServiceService,CategoriesService,UsersService,InterestsService,InterestsChartService],

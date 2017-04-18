@@ -3,14 +3,19 @@
 </p>
 <div class="container">
 <div style="display: block">
-	<div>{{doughnutChartData | json}}</div>
-  <canvas *ngIf="shown" baseChart [data]="doughnutChartData"  
+	<div>{{data[0].data }}</div>
+<div   *ngIf="shown"  >
+<!-- <canvas #mycanvas  baseChart [data]="doughnutChartData"  
   					[labels]="doughnutChartLabels"
               		[chartType]="doughnutChartType"  
               		(chartHover)="chartHovered($event)"
               		(chartClick)="chartClicked($event)">
               	
-  </canvas>
+  </canvas>	 -->
+
+  <chart [labels]="labels" [data]="data" type="doughnut"></chart>
+</div>
+  
 </div>
 </div>
 <!-- <script src="../node_modules/chart.js/src/chart.js"></script> -->

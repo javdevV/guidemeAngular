@@ -10,9 +10,20 @@ export class InterestsService {
 
     // Get all posts from the API
   getAllInterests() {
-    return this.http.get('http://localhost:3000/interestapi')
-      .map(res => res.json());
+  /*   return this.http.get('https://guidemeesprit.herokuapp.com/interestapi') */
+  return this.http.get('http://localhost:3000/interestapi')
+      .map(res => res.json());    
+    /*return new Promise((resolve, reject) => {
+         this.http.get('http://localhost:3000/interestapi')
+          .map(res => res.json())
+          .subscribe(res => {
+            resolve(res);
+          }, (err) => {
+            reject(err);
+          });
+    });*/
   }
+
   getById(id) {
     return this.http.get('https://guidemeesprit.herokuapp.com/interestapi/id/'+id)
       .map(res => res.json());
@@ -34,7 +45,20 @@ export class InterestsService {
       .map(res => res.json());
   }
   usersByInterest(label){
-    return this.http.get('http://localhost:3000/api/usersByInterest/'+label)
+/*    return this.http.get('https://guidemeesprit.herokuapp.com/api/usersByInterest/'+label)
+*/    return this.http.get('http://localhost:3000/api/usersByInterest/'+label)
     .map(res=> res.json());
   }
+
+  /* return new Promise((resolve, reject) => {
+        this.http.get('http://localhost:3000/api/usersByInterest/'+label)
+          .map(res => res.json())
+          .subscribe(res => {
+            resolve(res);
+          }, (err) => {
+            reject(err);
+          });
+    });
+}*/
+
 }
