@@ -7,9 +7,10 @@ import { routing } from './new.routing';
   imports: [
     CommonModule,
     routing
-  ],
+   ],
   declarations: [
     NewComponent
   ]
 })
-export class NewModule {}
+ export class NewModule {}
+ 
