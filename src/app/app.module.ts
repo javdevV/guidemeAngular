@@ -1,69 +1,100 @@
+import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule,Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { PostsComponent } from './posts/posts.component';
-import { PostComponent } from './posts/post.component';
-import { addBeacon } from './posts/addbeacon.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { AgmCoreModule } from 'angular2-google-maps/core';
-import { ChartsModule } from 'ng2-charts';
-import 'chart.js/src/chart.js'
-import { PostsService } from './posts/posts.service';
+import { RouterModule } from '@angular/router';
+import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateService } from '@ngx-translate/core';
+/*
+ * Platform and Environment providers/directives/pipes
+ */
+import { ENV_PROVIDERS } from './environment';
+import { routing } from './app.routing';
+
+// App is our top level component
+import { App } from './app.component';
+import { AppState, InternalStateType } from './app.service';
+import { GlobalState } from './global.state';
+import { NgaModule } from './theme/nga.module';
+import { PagesModule } from './pages/pages.module';
 
 
-const ROUTES = [
-  {
-    path: '',
-    redirectTo: 'posts',
-    pathMatch: 'full'
-  },
-  {
-    path: 'posts',
-    component: PostsComponent
-  },
-  {
-    path: 'posts/:id',
-    component: PostComponent,
-    templateUrl:'./posts/post.component.html'
-  },
-   {
-    path: 'beacons/add',
-    component: addBeacon,
-    templateUrl:'./posts/post.component.html'
-  }
+// Application wide providers
+const APP_PROVIDERS = [
+  AppState,
+  GlobalState
 ];
 
+export type StoreType = {
+  state: InternalStateType,
+  restoreInputValues: () => void,
+  disposeOldHosts: () => void
+};
 
-
-
-
-
-
-
+/**
+ * `AppModule` is the main entry point into Angular2's bootstraping process
+ */
 @NgModule({
+  bootstrap: [App],
   declarations: [
-    AppComponent,
-    PostsComponent,
-    PostComponent,
-    addBeacon,  
-    NavbarComponent,
-
-
+    App
   ],
-  imports: [
+  imports: [ // import Angular's modules
     BrowserModule,
-    FormsModule,
     HttpModule,
-    ChartsModule,
-    RouterModule.forRoot(ROUTES),
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAL7c9QdPAM76YPaaEBU2TZGuhMVx4GDFI'
-    })
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgaModule.forRoot(),
+    NgbModule.forRoot(),
+    PagesModule,
+    routing
+
   ],
-  providers: [PostsService],
-  bootstrap: [AppComponent]
+  providers: [ // expose our Services and Providers into Angular's dependency injection
+    ENV_PROVIDERS,
+    APP_PROVIDERS
+  ]
 })
-export class AppModule { }
+
+export class AppModule {
+
+  constructor(public appRef: ApplicationRef,
+              public appState: AppState) {
+  }
+
+  hmrOnInit(store: StoreType) {
+    if (!store || !store.state) return;
+    console.log('HMR store', JSON.stringify(store, null, 2));
+    // set state
+    this.appState._state = store.state;
+    // set input values
+    if ('restoreInputValues' in store) {
+      let restoreInputValues = store.restoreInputValues;
+      setTimeout(restoreInputValues);
+    }
+    this.appRef.tick();
+    delete store.state;
+    delete store.restoreInputValues;
+  }
+
+  hmrOnDestroy(store: StoreType) {
+    const cmpLocation = this.appRef.components.map(cmp => cmp.location.nativeElement);
+    // save state
+    const state = this.appState._state;
+    store.state = state;
+    // recreate root elements
+    store.disposeOldHosts = createNewHosts(cmpLocation);
+    // save input values
+    store.restoreInputValues = createInputTransfer();
+    // remove styles
+    removeNgStyles();
+  }
+
+  hmrAfterDestroy(store: StoreType) {
+    // display new elements
+    store.disposeOldHosts();
+    delete store.disposeOldHosts;
+  }
+}
