@@ -1,34 +1,42 @@
-/* tslint:disable:no-unused-variable */
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import {
+  inject,
+  async,
+  TestBed,
+  ComponentFixture
+} from '@angular/core/testing';
 
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+// Load the implementations that should be tested
+import { App } from './app.component';
+import { GlobalState } from './global.state';
+import { BaImageLoaderService, BaThemeSpinner } from './theme/services';
+import { BaThemeConfigProvider } from './theme/theme.configProvider';
+import { BaThemeConfig } from './theme/theme.config';
 
-describe('AppComponent', () => {
-  beforeEach(() => {
+describe(`App`, () => {
+  let comp: App;
+  let fixture: ComponentFixture<App>;
+
+  // async beforeEach
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
-    });
-    TestBed.compileComponents();
+      declarations: [ App ],
+      schemas: [NO_ERRORS_SCHEMA],
+      providers: [GlobalState, BaImageLoaderService, BaThemeSpinner, BaThemeConfigProvider, BaThemeConfig]
+    })
+    .compileComponents(); // compile template and css
+  }));
+
+  // synchronous beforeEach
+  beforeEach(() => {
+    fixture = TestBed.createComponent(App);
+    comp    = fixture.componentInstance;
+
+    fixture.detectChanges(); // trigger initial data binding
   });
 
-  it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  }));
-
-  it(`should have as title 'app works!'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app works!');
-  }));
-
-  it('should render title in a h1 tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('app works!');
-  }));
+  it(`should be readly initialized`, () => {
+    expect(fixture).toBeDefined();
+    expect(comp).toBeDefined();
+  });
 });
