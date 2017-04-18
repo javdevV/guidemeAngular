@@ -2,11 +2,29 @@ export const PAGES_MENU = [
   {
     path: 'pages',
     children: [
-     {
+      {
         path: 'posts',  // path for our page
         data: { // custom menu declaration
           menu: {
             title: 'Beacons', // menu title
+     {
+        path: 'new',  // path for our page
+        data: { // custom menu declaration
+          menu: {
+            title: 'hello title', // menu title
+             icon: 'ion-android-home', // menu icon
+            pathMatch: 'prefix', // use it if item children not displayed in menu
+            selected: false,
+            expanded: false,
+            order: 0
+          }
+        }
+      },
+       {
+        path: 'categories',  // path for our page
+        data: { // custom menu declaration
+          menu: {
+            title: 'Categories', // menu title
             icon: 'ion-android-home', // menu icon
             pathMatch: 'prefix', // use it if item children not displayed in menu
             selected: false,
@@ -15,12 +33,25 @@ export const PAGES_MENU = [
           }
         }
       },
-     {
-        path: 'new',  // path for our page
+      {
+        path: 'trackusers',  // path for our page
         data: { // custom menu declaration
           menu: {
-            title: 'New Page', // menu title
+            title: 'Users By Place', // menu title
             icon: 'ion-android-home', // menu icon
+            pathMatch: 'prefix', // use it if item children not displayed in menu
+            selected: false,
+            expanded: false,
+            order: 0
+          }
+        }
+      },
+      {
+        path: 'tags',  // path for our page
+        data: { // custom menu declaration
+          menu: {
+            title: 'Tags', // menu title
+             icon: 'ion-android-home', // menu icon
             pathMatch: 'prefix', // use it if item children not displayed in menu
             selected: false,
             expanded: false,

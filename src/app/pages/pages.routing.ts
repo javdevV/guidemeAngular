@@ -1,7 +1,7 @@
 import { Routes, RouterModule }  from '@angular/router';
 import { Pages } from './pages.component';
 import { ModuleWithProviders } from '@angular/core';
-// noinspection TypeScriptValidateTypes
+ // noinspection TypeScriptValidateTypes
 
 // export function loadChildren(path) { return System.import(path); };
 
@@ -28,9 +28,12 @@ export const routes: Routes = [
       { path: 'tables', loadChildren: 'app/pages/tables/tables.module#TablesModule' },
       { path: 'maps', loadChildren: 'app/pages/maps/maps.module#MapsModule' },
       { path: 'new',  loadChildren: 'app/pages/new/new.module#NewModule' },
-      { path: 'posts',  loadChildren: 'app/pages/posts/posts.module#PostsModule' }
+       { path: 'posts',  loadChildren: 'app/pages/posts/posts.module#PostsModule' }
 
-    ]
+       { path: 'categories',  loadChildren: 'app/pages/categories/categories.module#CategoriesModule' },
+      { path: 'tags',  loadChildren: 'app/pages/tags/tags.module#TagsModule' },
+      { path: 'trackusers',  loadChildren: 'app/pages/trackusers/trackusers.module#TrackUsersModule' }
+     ]
   }
 ];
 
