@@ -25,6 +25,7 @@ import { ChartModule } from 'ng2-chartjs2';
 
 import 'chart.js/src/chart.js';
 import { Chart2Component } from './chart2/chart2.component';
+import { AmChartComponent } from './am-chart/am-chart.component';
 
 
 const ROUTES = [
@@ -75,7 +76,8 @@ const ROUTES = [
     TagsComponent,
     CategoriesComponent,
     UsersComponent,
-    Chart2Component
+    Chart2Component,
+    AmChartComponent
   ],
   imports: [
     BrowserModule,
