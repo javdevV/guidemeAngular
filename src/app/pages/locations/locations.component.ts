@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import {LocationsService} from './locations.service';
+import {ActivatedRoute,Router,Params} from '@angular/router'
 
 @Component({
   selector: 'locations',

@@ -11,13 +11,13 @@ export class LocationsService{
 
  
   getAllLocation() {  
-    return this.http.get('https://guidemeesprit.herokuapp.com/api/musee')
+    return this.http.get('http://localhost:9000/api/musee')
       .map(res => res.json());
   }
 
 
 getLocationDetails(id) {
-    return this.http.get(`https://guidemeesprit.herokuapp.com/api/musee/${id}`)
+    return this.http.get(`http://localhost:9000/api/musee/${id}`)
       .map(res => res.json());
   }
 
@@ -28,7 +28,7 @@ getLocationDetails(id) {
 
 addLocation(data) {
     return new Promise((resolve, reject) => {
-        this.http.post('http://localhost:3000/api/musee',data)
+        this.http.post('http://localhost:9000/api/musee',data)
           .map(res => res.json())
           .subscribe(res => {
             resolve(res);
@@ -41,7 +41,7 @@ addLocation(data) {
 
 updateLocation(id, data) {
     return new Promise((resolve, reject) => {
-        this.http.put('https://guidemeesprit.herokuapp.com/api/musee/'+id, data)
+        this.http.put('http://localhost:9000/api/musee/'+id, data)
           .map(res => res.json())
           .subscribe(res => {
             resolve(res);

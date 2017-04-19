@@ -1,14 +1,5 @@
-<router-outlet></router-outlet>
-<!-- <ul class="list-group">
-	<li class="list-group-item" *ngFor="let location of locations">
 
-<a [routerLink]="['/location/'+location._id]">{{location.title}}</a>
-</li>
-</ul> -->
-<!-- I HATE YOU "'" 1heure wa7el à cause de ça ->' -->
 
-<!-- <section style="background-color: #FF8A7C" border="7" color="#FECEA8" > -->
-  <!--for demo wrap-->
   <h1>Locations</h1>
 
 <div class="vertical-scroll">
@@ -29,7 +20,7 @@
       <tbody>
 
         <tr *ngFor="let location of locations">
-          <td [routerLink]="['/location/'+location._id]">{{location.title}}</td>
+          <td [routerLink]="[+location._id]">{{location.title}}</td>
 			<td>{{location.latitude}}</td>
 			<td>{{location.longitude}}</td>
     		<td>{{location.ouverture}}</td>
