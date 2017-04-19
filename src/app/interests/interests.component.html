@@ -4,8 +4,11 @@
 		<input type="text" [(ngModel)]="inte.label" name ="label" required>
 		<!-- <button class="btn btn-info" (click)="ajouter($event)">Add</button> -->
 		<button type="submit" class="btn btn-success" [disabled]="!bookForm.form.valid">Save</button>
+		<button type="button"class="btn btn-primary" (click)=reset($event)>Reset</button>
 		<!-- <input type="submit" name="addbtn" value="Add"> -->
+		<!-- {{inte._id}}|{{inte.label}} -->
 	</form>
+
 	<h1>Interests Catalogue</h1>
 	<table class="table">
 		<thead>
@@ -39,7 +42,7 @@
 		</tbody>
 	</table>
 </div>
-<div class="container">
+<!-- <div class="container">
 <div style="display: block">
   <canvas baseChart [data]="doughnutChartData"  
   					[labels]="doughnutChartLabels"
@@ -49,6 +52,6 @@
               	
   </canvas>
 </div>
-</div>
+</div> -->
 
 
