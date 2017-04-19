@@ -29,7 +29,7 @@ export const routes: Routes = [
       { path: 'maps', loadChildren: 'app/pages/maps/maps.module#MapsModule' },
       { path: 'new',  loadChildren: 'app/pages/new/new.module#NewModule' },
        { path: 'posts',  loadChildren: 'app/pages/posts/posts.module#PostsModule' },
-
+  { path: 'locations',  loadChildren: 'app/pages/locations/locations.module#LocationsModule' },
        { path: 'categories',  loadChildren: 'app/pages/categories/categories.module#CategoriesModule' },
       { path: 'tags',  loadChildren: 'app/pages/tags/tags.module#TagsModule' },
       { path: 'trackusers',  loadChildren: 'app/pages/trackusers/trackusers.module#TrackUsersModule' }

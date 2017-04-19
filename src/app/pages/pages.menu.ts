@@ -15,6 +15,19 @@ export const PAGES_MENU = [
           }
         }
       },
+       {
+      path: 'locations',  // path for our page
+        data: { // custom menu declaration
+          menu: {
+            title: 'Locations', // menu title
+            icon: 'ion-android-home', // menu icon
+            pathMatch: 'prefix', // use it if item children not displayed in menu
+            selected: false,
+            expanded: false,
+            order: 0
+          }
+        }
+      },
      {
         path: 'new',  // path for our page
         data: { // custom menu declaration
@@ -41,6 +54,7 @@ export const PAGES_MENU = [
           }
         }
       },
+
       {
         path: 'trackusers',  // path for our page
         data: { // custom menu declaration
@@ -67,6 +81,9 @@ export const PAGES_MENU = [
           }
         }
       },
+
+   
+
       {
         path: 'dashboard',
         data: {
