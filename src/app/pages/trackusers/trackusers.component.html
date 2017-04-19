@@ -1,0 +1,7 @@
+
+<sebm-google-map [latitude]="lat" [longitude]="lng">
+<span *ngFor="let x of tabs">
+
+  <sebm-google-map-marker  [latitude]="x.pos_latitude" [longitude]="x.pos_longitude"></sebm-google-map-marker>
+</span>
+</sebm-google-map>

@@ -1,0 +1,59 @@
+<router-outlet></router-outlet>
+<ul class="btn-list clearfix" style="float:right">
+  
+  <li>
+    <button type="button" [routerLink]="['beacon/dashboardbeacon']" class="btn btn-default btn-icon"><i class="ion-stats-bars"></i> Dashboard 
+    </button>
+  </li>
+  </ul>      
+      
+<sebm-google-map (mapClick)="getPosition($event)" [latitude]="lat" [longitude]="lng" [zoom]="zoom" [backgroundColor]="backgroundColor" >
+  <sebm-google-map-marker *ngFor=" let post of posts" [latitude]="post.lapti" [longitude]="post.longi" ></sebm-google-map-marker> 
+</sebm-google-map>
+
+
+
+<div class="vertical-scroll">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <!-- <th class="table-id">uuid</th> -->
+      <th><a  [routerLink]="['beacon/addbeacon']"><img style="height:30px;width:30px" src="https://boonyah.com/wp-content/themes/BoonYah/images/beacon-icons.png"></a></th>
+      <th>Major</th>
+      <th>Minor</th>
+      <th>State</th>
+    <th>Remaining Days</th>
+   
+      
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let post of posts" [routerLink]="[+post._id]">
+    <td></td>
+      <!-- <td class="table-id" style="color:blue"><b>{{ post._id }}</b></td> -->
+      <td>{{ post.major }}</td>
+      <td>{{ post.minor }}</td>
+      
+      <td>
+        <button style="margin-left: 30px" *ngIf="post.state=='success'" ngClass="{status-button btn btn-xs btn-{{ post.state }}">Working beacon</button>
+         <button  style="margin-left: 30px" *ngIf="post.state=='danger'" ngClass="{status-button btn btn-xs btn-{{ post.state }}">Out of order</button>
+      </td>
+     <td *ngIf="post.remainingdays<20"><div style="height:20px" class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" 
+  style="width: 60%;">
+   
+  </div><b style="margin-left:10px;color:red">{{post.remainingdays}}</b>
+</div></td>
+ <td *ngIf="post.remainingdays>20"><div style="height:20px" class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" 
+  style="width: 60%;">
+   
+  </div><b style="margin-left:10px;color:white;">{{post.remainingdays}}</b>
+</div></td>
+<td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
