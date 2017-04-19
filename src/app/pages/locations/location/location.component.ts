@@ -13,7 +13,7 @@ import {Router,ActivatedRoute,Params} from '@angular/router';
 export class LocationComponent implements OnInit {
 id :any;
 location = {};
-imageUrl: any;
+img: any;
 latitude=this.latitude;
 longitude=this.longitude;
   streetViewControl :boolean=true;
