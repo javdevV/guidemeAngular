@@ -78,11 +78,12 @@ export class  AddLocationComponent implements OnInit {
           //get the place result
           this.onChange(event,this.a,this.latitude,this.longitude);
           let place: google.maps.places.PlaceResult = autocomplete.getPlace();
-console.log(place.formatted_address)
-console.log(place.name)
-console.log(place.opening_hours)
-console.log(place.opening_hours.open_now)
+console.log(place.formatted_address),
+console.log(place.name),
+console.log(place.opening_hours),
+// console.log(place.opening_hours.open_now)
 this.a=place.formatted_address
+
           //verify result
           if (place.geometry === undefined || place.geometry === null) {
             return;
@@ -145,7 +146,7 @@ this.location.longitude=longitude;
 
 this.LocationsService.addLocation(this.location).then((result) => {
       let id = result['_id'];
-      this.router.navigate(['/locations']);
+      this.router.navigate(['/pages/locations/']);
     }, (err) => {
       console.log(err);
     });

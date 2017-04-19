@@ -21,7 +21,7 @@
 
     </ul>
   </div>
-  <a class="btn btn-default" [routerLink]="['/edit-location/'+location._id]">Edit</a>
+  <a class="btn btn-default" [routerLink]="['/pages/locations/locations/edit/'+location._id]">Edit</a>
   <a class="btn btn-danger"  (click)="deleteLocation(location._id)">Delete</a>
 </div>
 <sebm-google-map [latitude]="location.latitude" [longitude]="location.longitude" >

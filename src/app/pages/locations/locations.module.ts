@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { NgaModule } from '../../theme/nga.module';
 import { LocationComponent } from './location/location.component.ts';
+import { EditLocationComponent } from './location/edit-location.component.ts';
 
 // import { AddLocationComponent } from '../add-location/add-location.component.ts';
 
@@ -26,7 +27,8 @@ apiKey: 'AIzaSyCRMaRyNEQQtAe-mI8OWIH0NlswIhz0p_I'
   declarations: [
 LocationsComponent,
 // AddLocationComponent,
-LocationComponent
+LocationComponent,
+EditLocationComponent
   ],
     providers : [LocationsService]
 })

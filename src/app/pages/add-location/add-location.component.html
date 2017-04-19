@@ -6,11 +6,11 @@
 <h2 class="page-header">Add Location</h2>
 
 
-<sebm-google-map [latitude]="latitude" [longitude]="longitude">
+<sebm-google-map [latitude]="latitude" [longitude]="longitude" >
   <sebm-google-map-marker [latitude]="latitude" [longitude]="longitude"></sebm-google-map-marker>
 </sebm-google-map>
  <div class="form-group">
-        <input placeholder="search for location"  autocorrect="off"  autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl" [(ngModel)]="location.title" (click)="onChange($event,a,latitude,longitude)">
+        <input placeholder="search for location"  autocorrect="off"  autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl" [(ngModel)]="a" (click)="onChange($event,a,latitude,longitude)">
       </div>
     <!--   <p>{{title}}</p> -->
 <form (submit)="onAddSubmit()">

@@ -46,7 +46,7 @@ private route:ActivatedRoute
 
 deleteLocation(id) {
   this.locationsService.deleteLocation(id).then((result) => {
-    this.router.navigate(['/locations']);
+    this.router.navigate(['/pages/locations/']);
   }, (err) => {
     console.log(err);
   });
