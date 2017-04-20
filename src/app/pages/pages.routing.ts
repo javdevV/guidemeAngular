@@ -28,6 +28,7 @@ export const routes: Routes = [
       { path: 'tables', loadChildren: 'app/pages/tables/tables.module#TablesModule' },
       { path: 'maps', loadChildren: 'app/pages/maps/maps.module#MapsModule' },
       { path: 'new',  loadChildren: 'app/pages/new/new.module#NewModule' },
+      { path: 'interests',  loadChildren: 'app/pages/interests/interests.module#InterestsModule' },
        { path: 'posts',  loadChildren: 'app/pages/posts/posts.module#PostsModule' },
 
        { path: 'categories',  loadChildren: 'app/pages/categories/categories.module#CategoriesModule' },
