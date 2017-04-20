@@ -32,7 +32,9 @@ export const routes: Routes = [
 
        { path: 'categories',  loadChildren: 'app/pages/categories/categories.module#CategoriesModule' },
       { path: 'tags',  loadChildren: 'app/pages/tags/tags.module#TagsModule' },
-      { path: 'trackusers',  loadChildren: 'app/pages/trackusers/trackusers.module#TrackUsersModule' }
+      { path: 'trackusers',  loadChildren: 'app/pages/trackusers/trackusers.module#TrackUsersModule' },
+      { path: 'loginh',  loadChildren: 'app/pages/loginh/loginh.module#LoginHModule' },
+      { path: 'loginv',  loadChildren: 'app/pages/loginv/loginv.module#LoginVModule' }
      ]
   }
 ];

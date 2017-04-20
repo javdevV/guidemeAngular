@@ -2,6 +2,32 @@ export const PAGES_MENU = [
   {
     path: 'pages',
     children: [
+    {
+        path: 'loginh',  // path for our page
+        data: { // custom menu declaration
+          menu: {
+            title: 'Loginh', // menu title
+            icon: 'ion-android-home', // menu icon
+            pathMatch: 'prefix', // use it if item children not displayed in menu
+            selected: false,
+            expanded: false,
+            order: 0
+          }
+        }
+      },
+    {
+        path: 'loginv',  // path for our page
+        data: { // custom menu declaration
+          menu: {
+            title: 'Loginv', // menu title
+            icon: 'ion-android-home', // menu icon
+            pathMatch: 'prefix', // use it if item children not displayed in menu
+            selected: false,
+            expanded: false,
+            order: 0
+          }
+        }
+      },
       {
         path: 'posts',  // path for our page
         data: { // custom menu declaration
