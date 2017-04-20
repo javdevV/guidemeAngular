@@ -26,19 +26,30 @@ p2:String;
   constructor(private postsService: PostsService,private route : ActivatedRoute,private router:Router) { }
 
   ngOnInit(){
-  
 
-console.log(this.uuid)
+    this.id=this.route.snapshot.params['id']
+    console.log(this.id)
+  this.post=this.postsService.getPostById(this.id).subscribe(post=>{
+
+  this.post=post;
+  
+  
+  
+  });
 }
 
  updateBeacon() {
-    this.postsService.updateBeacon(this.beacon).then((result) => {
+    this.postsService.updateBeacon(this.id,this.post).then((result) => {
       let id = result['_id'];
       this.router.navigate(['/posts']);
     }, (err) => {
       console.log(err);
     });
   }
+
+
+ 
+
 
 getPosition(event: any ) {
   
