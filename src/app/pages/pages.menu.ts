@@ -15,7 +15,7 @@ export const PAGES_MENU = [
           }
         }
       },
- 
+  
        {
       path: 'locations',  // path for our page
         data: { // custom menu declaration
@@ -55,7 +55,7 @@ export const PAGES_MENU = [
           }
         }
       },
-     {
+      {
         path: 'new',  // path for our page
         data: { // custom menu declaration
           menu: {

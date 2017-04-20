@@ -33,7 +33,7 @@ export const routes: Routes = [
       { path: 'locations',  loadChildren: 'app/pages/locations/locations.module#LocationsModule' },
       { path: 'add-location',  loadChildren: 'app/pages/add-location/add-location.module#AddLocationModule' },
       { path: 'categories',  loadChildren: 'app/pages/categories/categories.module#CategoriesModule' },
-      { path: 'tags',  loadChildren: 'app/pages/tags/tags.module#TagsModule' },
+       { path: 'tags',  loadChildren: 'app/pages/tags/tags.module#TagsModule' },
       { path: 'trackusers',  loadChildren: 'app/pages/trackusers/trackusers.module#TrackUsersModule' }
      ]
   }

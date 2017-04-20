@@ -9,18 +9,18 @@ export class PostsService {
 
  
   getAllPosts() {
-    return this.http.get('https://guidemeesprit.herokuapp.com/api/beacons')
+    return this.http.get('http://localhost:9000/api/beacons')
       .map(res => res.json());
   }
 getPostById(id) {
-    return this.http.get('https://guidemeesprit.herokuapp.com/api/beacons/'+id)
+    return this.http.get('http://localhost:9000/api/beacons/'+id)
       .map(res => res.json());
   }
 
 
 AddBeacon(data) {
     return new Promise((resolve, reject) => {
-        this.http.post('https://guidemeesprit.herokuapp.com/api/beacons', data)
+        this.http.post('http://localhost:9000/api/beacons', data)
           .map(res => res.json())
           .subscribe(res => {
             resolve(res);
@@ -35,7 +35,7 @@ AddBeacon(data) {
 
 deleteBeacon(id){
  return new Promise((resolve, reject) => {
-        this.http.delete('https://guidemeesprit.herokuapp.com/api/beacons/'+id)
+        this.http.delete('http://localhost:9000/api/beacons/'+id)
           .subscribe(res => {
             resolve(res);
           }, (err) => {
@@ -45,6 +45,53 @@ deleteBeacon(id){
 
 
 }
+
+
+
+updateBeacon(data) {
+    return new Promise((resolve, reject) => {
+        this.http.put('http://localhost:9000/api/beacons', data)
+          .map(res => res.json())
+          .subscribe(res => {
+            resolve(res);
+          }, (err) => {
+            reject(err);
+          });
+    });
+  }
+
+
+
+
+
+CountBeacons(){
+
+return this.http.get('https://api.mlab.com/api/1/databases/guideme/collections/ibeacons?q={%22state%22:%22success%22}&c=true&apiKey=TneUVlO-3l9pX9hkby6H0N_k4sz72LWi')
+      .map(res => res.json());
+
+
+  
+}
+
+
+CountAllBeacons(){
+
+return this.http.get('https://api.mlab.com/api/1/databases/guideme/collections/ibeacons?c=true&apiKey=TneUVlO-3l9pX9hkby6H0N_k4sz72LWi')
+      .map(res => res.json());
+
+
+  
+}
+
+
+// Beaconsbyplace(address){
+
+// return this.http.get('https://api.mlab.com/api/1/databases/guideme/collections/ibeacons?q={%22address%22:address}&c=true&apiKey=TneUVlO-3l9pX9hkby6H0N_k4sz72LWi')
+//       .map(res => res.json());
+
+
+  
+// }
 
 
 
