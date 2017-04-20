@@ -48,9 +48,14 @@ deleteBeacon(id){
 
 
 
-updateBeacon(data) {
+
+
+
+
+
+updateBeacon(id,data) {
     return new Promise((resolve, reject) => {
-        this.http.put('http://localhost:9000/api/beacons', data)
+        this.http.put('http://localhost:9000/api/beacons/'+id, data)
           .map(res => res.json())
           .subscribe(res => {
             resolve(res);
