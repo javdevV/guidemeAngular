@@ -8,7 +8,7 @@
   </ul>      
       
 <sebm-google-map (mapClick)="getPosition($event)" [latitude]="lat" [longitude]="lng" [zoom]="zoom" [backgroundColor]="backgroundColor" >
-  <sebm-google-map-marker *ngFor=" let post of posts" [latitude]="post.lapti" [longitude]="post.longi" ></sebm-google-map-marker> 
+  <sebm-google-map-marker (markerClick)="getCordinates($event)" *ngFor=" let post of posts" [latitude]="post.lapti" [longitude]="post.longi" ></sebm-google-map-marker> 
 </sebm-google-map>
 
 
@@ -23,6 +23,7 @@
       <th>Minor</th>
       <th>State</th>
     <th>Remaining Days</th>
+    <th>Delete</th>
    
       
     </tr>
@@ -50,7 +51,8 @@
    
   </div><b style="margin-left:10px;color:white;">{{post.remainingdays}}</b>
 </div></td>
-<td>
+<td> <button style="margin-left: 30px" [routerLink]="[+beacons/update/post._id]"  ngClass="{status-button btn btn-xs btn-info">Update</button></td>
+
     </tr>
     </tbody>
   </table>

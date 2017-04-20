@@ -3,12 +3,12 @@ import { PostsService } from '../posts.service';
 import {ActivatedRoute,Router,Params} from '@angular/router';
 
 @Component({
-  selector: 'app-addbeacon',
-  templateUrl: './addbeacon.component.html',
+  selector: 'app-updatebeacon',
+  templateUrl: './update.component.html',
   styleUrls: ['./addbeacon.component.css']
 })
 
-export class addBeacon implements OnInit {
+export class UpdateBeacon implements OnInit {
  uuid:String;
  posts: any = [];
  post:any;
@@ -31,8 +31,8 @@ p2:String;
 console.log(this.uuid)
 }
 
- saveBeacon() {
-    this.postsService.AddBeacon(this.beacon).then((result) => {
+ updateBeacon() {
+    this.postsService.updateBeacon(this.beacon).then((result) => {
       let id = result['_id'];
       this.router.navigate(['/posts']);
     }, (err) => {

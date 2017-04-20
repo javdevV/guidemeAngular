@@ -43,7 +43,12 @@ this.post=this.postsService.getPostById(this.id).subscribe(post=>{
 
 
 
+public deletebeacon(id){
+this.post=this.postsService.deleteBeacon(this.id);
 
+
+
+}
 
 
 
