@@ -11,7 +11,7 @@ export class InterestsService {
     // Get all posts from the API
   getAllInterests() {
   /*   return this.http.get('https://guidemeesprit.herokuapp.com/interestapi') */
-  return this.http.get('http://localhost:3001/interestapi')
+  return this.http.get('http://localhost:9000/interestapi')
       .map(res => res.json());    
     /*return new Promise((resolve, reject) => {
          this.http.get('http://localhost:3000/interestapi')
@@ -25,28 +25,28 @@ export class InterestsService {
   }
 
   getById(id) {
-    return this.http.get('http://localhost:3001/interestapi/id/'+id)
+    return this.http.get('http://localhost:9000/interestapi/id/'+id)
       .map(res => res.json());
   }
   postInterest(inte){
   	let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-  	return this.http.post('http://localhost:3001/interestapi',inte,options)
+  	return this.http.post('http://localhost:9000/interestapi',inte,options)
   	.map(res => res.json());
   }
   editInterest(inte,id){
   	let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-  	return this.http.put('http://localhost:3001/interestapi/'+id,inte,options)
+  	return this.http.put('http://localhost:9000/interestapi/'+id,inte,options)
   	.map(res => res.json());
   }
   deleteInterest(id){
-     return this.http.delete('http://localhost:3001/interestapi/'+id)
+     return this.http.delete('http://localhost:9000/interestapi/'+id)
       .map(res => res.json());
   }
   usersByInterest(label){
 /*    return this.http.get('https://guidemeesprit.herokuapp.com/api/usersByInterest/'+label)
-*/    return this.http.get('http://localhost:3001/api/usersByInterest/'+label)
+*/    return this.http.get('http://localhost:9000/api/usersByInterest/'+label)
     .map(res=> res.json());
   }
 

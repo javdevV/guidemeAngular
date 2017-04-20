@@ -1,7 +1,7 @@
 <router-outlet></router-outlet>
 <br />
 <div>
-<form (submit)="saveBeacon()">
+<form (submit)="updateBeacon()">
   <div class="form-group">
     <label for="input01">UUID</label>
     <input class="form-control form-control-rounded" id="input01" style="width:600px;margin-left:60px" type="text" [(ngModel)]="beacon.uuid"  name="uuid" disabled>

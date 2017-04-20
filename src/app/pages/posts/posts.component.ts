@@ -96,7 +96,10 @@ deleteBeacon(id) {
 
 
 
+getCordinates($event){
+console.log($event)
 
+}
 
 
 
