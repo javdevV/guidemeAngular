@@ -14,7 +14,7 @@ const routes: Routes = [
      { path: 'posts/:id', component:PostComponent },
      { path: 'posts/beacon/addbeacon', component:addBeacon },
       { path: 'posts/beacon/dashboardbeacon', component:dashboardBeacon },
-      { path: 'posts/beacon/updatebeacon/:id', component:UpdateBeacon }
+      { path: 'posts/update/:id', component:UpdateBeacon }
   
 ];
 
