@@ -1,0 +1,32 @@
+<router-outlet></router-outlet>
+
+
+
+<br>
+<h2 class="page-header"><strong>{{location.title}}</strong> <small> Entrée pour Handicapé:Oui</small></h2>
+
+<div class="row">
+
+  <div class="col-md-4">
+    <!-- IMAGE HERE -->
+      <div class="img-wrapper">
+      <img src="{{location.img}}" alt="Testing Photo">
+  </div>
+  </div>
+  <div class="col-md-8">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">Latitude: {{location.latitude}}</li>
+      <li class="list-group-item list-group-item-info">Longitude: {{location.longitude}}</li>
+    <li class="list-group-item list-group-item-info">  {{location.ouverture}}</li>
+
+    </ul>
+  </div>
+  <a class="btn btn-default" [routerLink]="['/pages/locations/locations/edit/'+location._id]">Edit</a>
+  <a class="btn btn-danger"  (click)="deleteLocation(location._id)">Delete</a>
+</div>
+<sebm-google-map [latitude]="location.latitude" [longitude]="location.longitude" >
+  <sebm-google-map-marker [latitude]="location.latitude" [longitude]="location.longitude"></sebm-google-map-marker>
+
+</sebm-google-map>
+
+

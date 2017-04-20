@@ -29,9 +29,10 @@ export const routes: Routes = [
       { path: 'maps', loadChildren: 'app/pages/maps/maps.module#MapsModule' },
       { path: 'new',  loadChildren: 'app/pages/new/new.module#NewModule' },
       { path: 'interests',  loadChildren: 'app/pages/interests/interests.module#InterestsModule' },
-       { path: 'posts',  loadChildren: 'app/pages/posts/posts.module#PostsModule' },
-
-       { path: 'categories',  loadChildren: 'app/pages/categories/categories.module#CategoriesModule' },
+      { path: 'posts',  loadChildren: 'app/pages/posts/posts.module#PostsModule' },
+      { path: 'locations',  loadChildren: 'app/pages/locations/locations.module#LocationsModule' },
+      { path: 'add-location',  loadChildren: 'app/pages/add-location/add-location.module#AddLocationModule' },
+      { path: 'categories',  loadChildren: 'app/pages/categories/categories.module#CategoriesModule' },
       { path: 'tags',  loadChildren: 'app/pages/tags/tags.module#TagsModule' },
       { path: 'trackusers',  loadChildren: 'app/pages/trackusers/trackusers.module#TrackUsersModule' }
      ]
