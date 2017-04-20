@@ -33,16 +33,13 @@ export const routes: Routes = [
       { path: 'locations',  loadChildren: 'app/pages/locations/locations.module#LocationsModule' },
       { path: 'add-location',  loadChildren: 'app/pages/add-location/add-location.module#AddLocationModule' },
       { path: 'categories',  loadChildren: 'app/pages/categories/categories.module#CategoriesModule' },
-<<<<<<< HEAD
-      { path: 'tags',  loadChildren: 'app/pages/tags/tags.module#TagsModule' },
+       { path: 'tags',  loadChildren: 'app/pages/tags/tags.module#TagsModule' },
       { path: 'trackusers',  loadChildren: 'app/pages/trackusers/trackusers.module#TrackUsersModule' },
       { path: 'loginh',  loadChildren: 'app/pages/loginh/loginh.module#LoginHModule' },
-      { path: 'loginv',  loadChildren: 'app/pages/loginv/loginv.module#LoginVModule' }
-=======
-       { path: 'tags',  loadChildren: 'app/pages/tags/tags.module#TagsModule' },
+      { path: 'loginv',  loadChildren: 'app/pages/loginv/loginv.module#LoginVModule' },
+        { path: 'tags',  loadChildren: 'app/pages/tags/tags.module#TagsModule' },
       { path: 'trackusers',  loadChildren: 'app/pages/trackusers/trackusers.module#TrackUsersModule' }
->>>>>>> d2c044bfdb87d0738a3b7c8f331be0c6cc58772a
-     ]
+      ]
   }
 ];
 

@@ -2,19 +2,22 @@ import {Component} from '@angular/core';
 import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
 import { AuthService } from './auth.service';
 import 'style-loader!./login.scss';
-import { User } from "./user.interface";
-@Component({
+import { Router } from '@angular/router';
+
+
+ @Component({
   selector: 'login',
   templateUrl: './login.html',
 })
 export class Login {
+  localUser = {email:'',password:''} ;
 
   public form:FormGroup;
   public email:AbstractControl;
   public password:AbstractControl;
   public submitted:boolean = false;
-  user:User;
-  constructor(fb:FormBuilder,private authService: AuthService) {
+
+   constructor(fb:FormBuilder,private authService: AuthService,private _router : Router) {
     this.form = fb.group({
       'email': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(4)])]
@@ -28,12 +31,14 @@ export class Login {
     this.submitted = true;
     if (this.form.valid) {
      console.log(values)
-this.authService.Login(this.user).then((result) => {
-      
-     // this.router.navigate(['/posts']);
-    }, (err) => {
-      console.log(err);
-    });
+     this.authService.loginfn(this.localUser).then((res) => {
+            if(res){
+              console.log('hello connected')
+              this._router.navigate(['dashboard']);
+            }
+            else
+            console.log("error");
+        })
 
 
     }

@@ -1,24 +1,10 @@
-<h1>hello wrold</h1>
 <div class="container">
-
+<form (ngSubmit)="login()" #bookForm="ngForm">
 	<label>email</label>
-	<input type="text" name="email"  >
+	<input type="text" name="email" [(ngModel)]="localUser.email" required >
 	<label>password</label>
-	<input type="text" name="password" >
-    <button (click)="login()">Login</button>
-
-<!-- 	<form (ngSubmit)="save(localUser.email,localUser.password)" #bookForm="ngForm">
-		<label for="name">Label : </label>
-		<input type="text" [(ngModel)]="localUser.email" name ="email">
-		
-		<label for="name">Label : </label>
-		<input type="text" [(ngModel)]="localUser.password" name ="password">
-
-		<button type="submit" class="btn btn-success" [disabled]="!bookForm.form.valid">Save</button>
-		{{localUser.email}}|{{localUser.password}}
-	</form>
- --> 
-
- 
+	<input type="text" name="password" [(ngModel)]="localUser.password" required>
+    <button type="submit" [disabled]="!bookForm.form.valid">Login</button>
+</form>
 </div>
 

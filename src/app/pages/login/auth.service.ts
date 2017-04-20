@@ -1,34 +1,34 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http,Headers,RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
-import { User } from "./user.interface";
 @Injectable()
 export class AuthService {
-email:String;
-password:String;
-user:User;
+
   constructor(private http: Http) { }
 
- 
-  // Login() {
-  //   return this.http.get('http://localhost:3000/auth/local')
-  //     .map(res => res.json());
-  // }
+  
+
+isLoggedin: boolean;
 
 
-Login(user) {
-     
-return new Promise((resolve, reject) => {
-        this.http.post('http://localhost:3000/auth/local', user)
-          .map(res => res.json())
-          
-    });
+     loginfn(usercreds) {
+        this.isLoggedin = false;
+        var headers = new Headers({'Content-Type': 'application/json'});
+         let options = new RequestOptions({headers:headers});
 
-
-
-
-  }
-       
-  }
-
+        return new Promise((resolve) => {
+            // JSON.stringify({"email":usercreds.email,
+            //              "password":usercreds.password})
+        this.http.post('http://localhost:9000/auth/local', usercreds,options).map(res=>res.json())
+        		.subscribe((data) => {
+            if(data.token) {
+                window.localStorage.setItem('auth_key', data.token);
+                console.log(document.cookie);
+                this.isLoggedin = true;}
+                resolve(this.isLoggedin)
+            }
+        )
+        
+        })
+    }
 }
