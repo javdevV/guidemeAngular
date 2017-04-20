@@ -15,12 +15,52 @@ export const PAGES_MENU = [
           }
         }
       },
-     {
+  
+       {
+      path: 'locations',  // path for our page
+        data: { // custom menu declaration
+          menu: {
+            title: 'Locations', // menu title
+            icon: 'ion-android-home', // menu icon
+             pathMatch: 'prefix', // use it if item children not displayed in menu
+            selected: false,
+            expanded: false,
+            order: 0
+          }
+        }
+      },
+       {
+        path: 'interests',  // path for our page
+        data: { // custom menu declaration
+          menu: {
+            title: 'Interests', // menu title
+            icon: 'ion-android-home', // menu icon
+            pathMatch: 'prefix', // use it if item children not displayed in menu
+            selected: false,
+            expanded: false,
+            order: 0
+          }
+        }
+      },
+          {
+      path: 'add-location',  // path for our page
+        data: { // custom menu declaration
+          menu: {
+            title: 'Add A New Location ', // menu title
+            icon: 'ion-android-home', // menu icon
+            pathMatch: 'prefix', // use it if item children not displayed in menu
+            selected: false,
+            expanded: false,
+            order: 0
+          }
+        }
+      },
+      {
         path: 'new',  // path for our page
         data: { // custom menu declaration
           menu: {
             title: 'hello title', // menu title
-             icon: 'ion-android-home', // menu icon
+              icon: 'ion-android-home', // menu icon
             pathMatch: 'prefix', // use it if item children not displayed in menu
             selected: false,
             expanded: false,
@@ -41,7 +81,7 @@ export const PAGES_MENU = [
           }
         }
       },
-      {
+       {
         path: 'trackusers',  // path for our page
         data: { // custom menu declaration
           menu: {
@@ -67,7 +107,7 @@ export const PAGES_MENU = [
           }
         }
       },
-      {
+       {
         path: 'dashboard',
         data: {
           menu: {
