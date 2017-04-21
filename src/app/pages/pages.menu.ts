@@ -20,7 +20,7 @@ export const PAGES_MENU = [
         data: { // custom menu declaration
           menu: {
             title: 'Locations', // menu title
-            icon: 'ion-android-home', // menu icon
+            icon: 'ion-map', // menu icon
             pathMatch: 'prefix', // use it if item children not displayed in menu
             selected: false,
             expanded: false,
@@ -32,11 +32,11 @@ export const PAGES_MENU = [
       path: 'add-location',  // path for our page
         data: { // custom menu declaration
           menu: {
-            title: 'Add A New Location ', // menu title
-            icon: 'ion-android-home', // menu icon
+            title: 'New Location', // menu title
+            icon: 'ion-location', // menu icon
             pathMatch: 'prefix', // use it if item children not displayed in menu
             selected: false,
-            expanded: false,
+            expanded: false,ion-location
             order: 0
           }
         }
