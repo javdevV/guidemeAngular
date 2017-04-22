@@ -1,0 +1,10 @@
+<div class="container">
+<form (ngSubmit)="login()" #bookForm="ngForm">
+	<label>email</label>
+	<input type="text" name="email" [(ngModel)]="localUser.email" required >
+	<label>password</label>
+	<input type="text" name="password" [(ngModel)]="localUser.password" required>
+    <button type="submit" [disabled]="!bookForm.form.valid">Login</button>
+</form>
+</div>
+

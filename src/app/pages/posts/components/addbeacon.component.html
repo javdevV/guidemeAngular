@@ -1,36 +1,39 @@
 <router-outlet></router-outlet>
 <br />
+<div>
 <form (submit)="saveBeacon()">
   <div class="form-group">
     <label for="input01">UUID</label>
-    <input class="form-control form-control-rounded" id="input01" style="width:600px;margin-left:60px" type="text" [(ngModel)]="uuid" value="{{uuid}}" name="uuid" disabled>
+    <input class="form-control form-control-rounded" id="input01" style="width:600px;margin-left:60px" type="text" [(ngModel)]="beacon.uuid"  name="uuid" disabled>
   </div>
   <div class="form-group">
     <label for="input02">Major</label>
-    <input class="form-control form-control-rounded" id="input02" style="width:600px;margin-left:60px" type="text" [(ngModel)]="beacon.major" name="major" required>
+    <input class="form-control form-control-rounded" id="input02" style="width:600px;margin-left:60px" type="text" [(ngModel)]="beacon.major" Placeholder="Major here " name="major" required>
   </div>
   <div class="form-group">
     <label for="input03">Minor</label>
-    <input class="form-control form-control-rounded" id="input03" style="width:600px;margin-left:60px"  type="text" [(ngModel)]="beacon.minor" name="minor" required>
+    <input class="form-control form-control-rounded" id="input03" Placeholder="Minor Here" style="width:600px;margin-left:60px"  type="text" [(ngModel)]="beacon.minor" name="minor" required>
   </div>
   <div class="form-group">
     <label for="input04">Adress</label>
-    <input class="form-control form-control-rounded" id="input04" style="width:600px;margin-left:60px"  type="text" [(ngModel)]="beacon.address" name="address" required>
+    <input class="form-control form-control-rounded" id="input04" Placeholder="Address Here" style="width:600px;margin-left:60px"  type="text" [(ngModel)]="beacon.address" name="address" required>
   </div>
+  
   <div class="form-group">
     <label for="input05">Longitude</label>
-    <input class="form-control form-control-rounded" id="input05" style="width:600px;margin-left:60px" type="number" maxlength="5" value="{{p1}}" [(ngModel)]="beacon.longi"    name="longi" required>
+    <input class="form-control form-control-rounded" id="input05" Placeholder="Click on map to choose place " style="color:blue;width:600px;margin-left:60px" type="number" maxlength="5" value="{{p1}}" [(ngModel)]="beacon.longi"    name="longi" required>
   </div>
   <div class="form-group">
     <label for="input06">Latitude</label>
-    <input class="form-control form-control-rounded" id="input06" style="width:600px;margin-left:60px" type="number" maxlength="5" value="{{p2}}" [(ngModel)]="beacon.lapti"    name="lapti" required>
+    <input class="form-control form-control-rounded" Placeholder="Click on mapto choose place " id="input06" style="color:blue;width:600px;margin-left:60px" type="number" maxlength="5" value="{{p2}}" [(ngModel)]="beacon.lapti"    name="lapti" required>
   </div>
-  
+ 
  <button style="margin-left:700px;margin-bottom:10px" type="submit" class="btn btn-success btn-with-icon"><i class="ion-android-checkmark-circle"></i>Success
     </button>
   <!-- <input type="submit" value="submit" class="btn btn-success" style="margin-left: 600px;margin-top:20px;width:100px;height:30px"> -->
 </form>
 
-<sebm-google-map (mapClick)="getPosition($event)" [latitude]="lat" [longitude]="lng" [zoom]="zoom" [backgroundColor]="backgroundColor" style="margin-bottom:900px">
-  <sebm-google-map-marker *ngFor=" let post of posts" [latitude]="post.lapti" [longitude]="post.longi" ></sebm-google-map-marker>
+<sebm-google-map (mapClick)="getPosition($event)" [latitude]="lat" [longitude]="lng" [zoom]="zoom" [backgroundColor]="backgroundColor" style="float:right">
+  <sebm-google-map-marker (markerClick)="getCordinates($event)" *ngFor=" let post of posts" [latitude]="post.lapti" [longitude]="post.longi" ></sebm-google-map-marker>
 </sebm-google-map>
+</div>

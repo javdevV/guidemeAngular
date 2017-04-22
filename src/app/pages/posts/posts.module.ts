@@ -10,6 +10,9 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 import { addBeacon } from './components/addbeacon.component.ts';
 import { FormsModule } from '@angular/forms';
 import { dashboardBeacon } from './components/dashboardbeacon.component.ts';
+import { UpdateBeacon } from './components/updatebeacon.component.ts';
+// import { ChartsModule } from 'ng2-charts';
+// import '../../../../node_modules/chart.js/src/chart.js';
 @NgModule({
   imports: [
     CommonModule,
@@ -18,12 +21,15 @@ import { dashboardBeacon } from './components/dashboardbeacon.component.ts';
     NgaModule,
     FormsModule,
     AgmCoreModule.forRoot({apiKey: 'AIzaSyBwQa0LEvba1MplMu9wHOyi5lso5b_x0eM' })
+    
+    
   ],
   declarations: [
     PostsComponent,
     PostComponent,
     addBeacon,
-    dashboardBeacon
+    dashboardBeacon,
+    UpdateBeacon
   ],
   providers:[PostsService]
 })

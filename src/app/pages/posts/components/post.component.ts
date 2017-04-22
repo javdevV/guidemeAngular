@@ -45,7 +45,13 @@ this.post=this.postsService.getPostById(this.id).subscribe(post=>{
 
 
 
-
+deleteBeacon(id) {
+  this.postsService.deleteBeacon(id).then((result) => {
+    this.router.navigate(['/posts']);
+  }, (err) => {
+    console.log(err);
+  });
+}
 
 
 }
