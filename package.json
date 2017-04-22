@@ -23,6 +23,7 @@
     "@ngx-translate/http-loader": "0.0.3",
     "@types/google-maps": "^3.2.0",
     "amcharts3": "github:amcharts/amcharts3",
+    "amcharts3-angular2": "github:amcharts/amcharts3-angular2",
     "ammap3": "github:amcharts/ammap3",
     "angular2-google-maps": "^0.17.0",
     "animate.css": "3.5.2",

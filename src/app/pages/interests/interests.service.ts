@@ -13,8 +13,8 @@ export class InterestsService {
   /*   return this.http.get('https://guidemeesprit.herokuapp.com/interestapi') */
   return this.http.get('http://localhost:9000/interestapi')
       .map(res => res.json());    
-    /*return new Promise((resolve, reject) => {
-         this.http.get('http://localhost:3000/interestapi')
+/*    return new Promise((resolve, reject) => {
+         this.http.get('http://localhost:9000/interestapi')
           .map(res => res.json())
           .subscribe(res => {
             resolve(res);
@@ -23,7 +23,17 @@ export class InterestsService {
           });
     });*/
   }
-
+getAllInterests1() {
+   return new Promise((resolve, reject) => {
+         this.http.get('http://localhost:9000/interestapi')
+          .map(res => res.json())
+          .subscribe(res => {
+            resolve(res);
+          }, (err) => {
+            reject(err);
+          });
+        });
+      }
   getById(id) {
     return this.http.get('http://localhost:9000/interestapi/id/'+id)
       .map(res => res.json());
@@ -45,20 +55,20 @@ export class InterestsService {
       .map(res => res.json());
   }
   usersByInterest(label){
-/*    return this.http.get('https://guidemeesprit.herokuapp.com/api/usersByInterest/'+label)
-*/    return this.http.get('http://localhost:9000/api/usersByInterest/'+label)
+/*    return this.http.get('https://guidemeesprit.herokuapp.com/api/usersByInterest/'+label)*/
+    return this.http.get('http://localhost:9000/api/usersByInterest/'+label)
     .map(res=> res.json());
   }
-
-  /* return new Promise((resolve, reject) => {
-        this.http.get('http://localhost:3000/api/usersByInterest/'+label)
-          .map(res => res.json())
+   usersByInterest1(label){
+   return new Promise((resolve, reject) => {
+        this.http.get('http://localhost:9000/api/usersByInterest/'+label)
+          .map(res => (res.json().length*1000))
           .subscribe(res => {
             resolve(res);
           }, (err) => {
             reject(err);
           });
     });
-}*/
+}
 
 }

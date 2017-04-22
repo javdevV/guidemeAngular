@@ -1,5 +1,5 @@
 import {Component , OnInit} from '@angular/core';
- import { InterestsService } from './interests.service';
+import { InterestsService } from './interests.service';
 
 @Component({
   selector: 'interests',
@@ -12,19 +12,19 @@ inte = {"label":""};
 label: String;
 pos:number;
 
-public doughnutChartLabels:string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
+/*public doughnutChartLabels:string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
 public doughnutChartData:number[] = [350, 450, 100];
-public doughnutChartType:string = 'doughnut';
+public doughnutChartType:string = 'doughnut';*/
 
 constructor(private intService: InterestsService) { }
 
-public chartClicked(e:any):void {
+/*public chartClicked(e:any):void {
 console.log(e);
 }
 
 public chartHovered(e:any):void {
 console.log(e);
-}
+}*/
 
 ngOnInit() {
 	// Retrieve posts from the API
