@@ -62,7 +62,7 @@ getAllInterests1() {
    usersByInterest1(label){
    return new Promise((resolve, reject) => {
         this.http.get('http://localhost:9000/api/usersByInterest/'+label)
-          .map(res => (res.json().length*1000))
+          .map(res => (res.json().length))
           .subscribe(res => {
             resolve(res);
           }, (err) => {

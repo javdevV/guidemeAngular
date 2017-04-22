@@ -77,13 +77,13 @@ this.shown=true;
 					dataProvider[k].value=<number>this.sourour[k];
 					if(dataProvider[k].value > 0){
 						ss.push(dataProvider[k]);
-						console.log(ss);
+						//console.log(ss);
 						}
 
-					if(k==this.sourour.length-1){
+					/*if(k==this.sourour.length-1){
 						this.shown = true;
 						console.log("shown"+this.shown);
-					}
+					}*/
 				}
 				console.log(ss);
 				//filled
@@ -110,7 +110,7 @@ start(){
 		{label: "Quotesdd", value: 200},
 		{label: "Quotesee", value: 300}
 		],*/
-
+		"innerRadius": 20,
 		"outlineAlpha": 0.4,
 		"depth3D": 15,
 		"balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
