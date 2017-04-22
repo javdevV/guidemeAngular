@@ -36,7 +36,7 @@ export const PAGES_MENU = [
             icon: 'ion-location', // menu icon
             pathMatch: 'prefix', // use it if item children not displayed in menu
             selected: false,
-            expanded: false,ion-location
+            expanded: false,
             order: 0
           }
         }
