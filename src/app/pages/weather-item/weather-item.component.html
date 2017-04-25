@@ -9,39 +9,39 @@
 <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
  <div class="form-group has-success">
  <label class="control-label" style="font-size: 20px;">Altitude</label>
-    <input class="form-control" type="text" [(ngModel)]="pos1" value="{{location.latitude}}"  name="lat" disabled>
+    <input class="col-lg-6  form-control" type="text" [(ngModel)]="pos1" value="{{location.latitude}}"  name="lat" disabled>
 
     
     <label class="control-label" style="font-size: 20px;">Longitude</label>
-    <input class="form-control" type="text" [(ngModel)]="pos2"  value="{{location.latitude}}"  name="lng" disabled>
+    <input class="col-lg-6  form-control" type="text" [(ngModel)]="pos2"  value="{{location.latitude}}"  name="lng" disabled>
 
             <button class="btn btn-primary btn-lg" type="submit">Add Location: </button>  
         </div>
     </form>
 </section>
 
-
+<section class="a">
 <div *ngFor="let weatherItem of weatherItems">
-  <div class="panel-heading">
+  <div class="panel-heading" >
     <h3>Summery: {{weatherItem.summery}}</h3> 
 
   </div>
-  
+
 
 
   <div>
    <strong>TimeZone: {{weatherItem.timezone}}</strong>
     <ul class="list-group">
-      <li class="col-lg-6 list-group-item">
+      <li class="col-lg-6 form-control">
         <h4>Temperature: {{((weatherItem.temperature-32)*5)/9}} °C</h4>
       </li>
-      <li class="col-lg-6 list-group-item">
+      <li class="col-lg-6 form-control">
         <h4>Wind: {{weatherItem.windSpeed}}</h4>
       </li>
-       <li class="col-lg-6 list-group-item">
+       <li class="col-lg-6 form-control">
         <h4>Humidity  : {{weatherItem.humidity}}%</h4>
       </li>
-         <li class="col-lg-6 list-group-item">
+         <li class="col-lg-6 form-control">
         <h4>Summery Details  : {{weatherItem.sum}}</h4>
       </li>
       <br>
@@ -50,3 +50,4 @@
   </div>
   <br>
 </div>
+</section>

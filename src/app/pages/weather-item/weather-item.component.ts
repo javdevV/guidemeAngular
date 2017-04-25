@@ -15,6 +15,8 @@ export class WeatherItemComponent implements OnInit {
    location = {latitude:String ,longitude:Number};
    pos1:String;
 pos2:String;
+
+
 setPosition(position){
 
       this.location = position.coords;
