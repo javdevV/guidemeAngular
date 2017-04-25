@@ -32,6 +32,7 @@ console.log(this.uuid)
 }
 
  saveBeacon() {
+   
     this.postsService.AddBeacon(this.beacon).then((result) => {
       let id = result['_id'];
       this.router.navigate(['/posts']);
@@ -40,22 +41,51 @@ console.log(this.uuid)
     });
   }
 
-getPosition(event: any ) {
+getPosition($event:any) {
+   this.markers.push({
+      lat: $event.coords.lat,
+      lng: $event.coords.lng,
+      draggable:true
+    });
+ // let coords = event.coords;
+ // this.p1=coords.lng;
+ // this.p2=coords.lat;
+ // console.log(event)
+ // console.log("latitude :", coords.lat);
+ //    console.log("longitude: ", coords.lng);
+
+
+}
+
+getCordinates(label: string, index: number){
+
+    console.log(`clicked the marker: ${label || index}`)
   
- let coords = event.coords;
- this.p1=coords.lng;
- this.p2=coords.lat;
- console.log(event)
- console.log("latitude :", coords.lat);
-    console.log("longitude: ", coords.lng);
 
 
 }
 
-getCordinates($event){
-console.log($event)
 
-}
 
+ markers: marker[] = [
+      {
+          lat: 51.673858,
+          lng: 7.815982,
+          label: 'A',
+          draggable: true
+      }
+  ]
+
+
+
+
+
+markerDragEnd(m: marker, $event: any) {
+    let coords = $event.coords;
+  this.p1=coords.lng;
+  this.p2=coords.lat;
+    console.log('dragEnd', m, $event);
+
+  }
 
 }
