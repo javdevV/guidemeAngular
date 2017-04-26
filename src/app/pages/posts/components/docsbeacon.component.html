@@ -1,0 +1,10 @@
+ <div>
+      <label>Page:</label>
+      <input type="number" placeholder="Page" [(ngModel)]="page">
+  </div>
+  <pdf-viewer style="width:100px;height:100px" [src]="'http://www.bnbeacon.com/plaquettes/Datasheet_Gamme_iBeacon_Eddystone_BlueNetBeacon.pdf'" 
+              [page]="page" 
+              [original-size]="true" 
+              style="display: block;"
+              [zoom]="1.4"
+  ></pdf-viewer>
