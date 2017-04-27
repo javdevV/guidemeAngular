@@ -1,14 +1,25 @@
 <router-outlet></router-outlet>
 <ul class="btn-list clearfix" style="float:right">
   
-  <li>
+  
     <button type="button" [routerLink]="['beacon/dashboardbeacon']" class="btn btn-default btn-icon"><i class="ion-stats-bars"></i> Dashboard 
     </button>
-  </li>
+
+ <br/>
+    <button type="button" [routerLink]="['beacon/docsbeacon']" class="btn btn-default btn-icon"><i class="ion-stats-bars"></i> DOCS
+    </button>
+ 
   </ul>      
       
 <sebm-google-map (mapClick)="getPosition($event)" [latitude]="lat" [longitude]="lng" [zoom]="zoom" [backgroundColor]="backgroundColor" >
-  <sebm-google-map-marker (markerClick)="getCordinates($event)" *ngFor=" let post of posts" [latitude]="post.lapti" [longitude]="post.longi" ></sebm-google-map-marker> 
+  <sebm-google-map-marker (markerClick)="getCordinates($event)" *ngFor=" let post of posts" [latitude]="post.lapti" [longitude]="post.longi" >
+     <sebm-google-map-info-window><strong style="color:blue">{{post.address}}</strong>
+<br>
+<a (click)="deleteBeacon(post._id)" style="color:red">Delete</a>
+     </sebm-google-map-info-window>
+
+  </sebm-google-map-marker>
+
 </sebm-google-map>
 
 
@@ -29,7 +40,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let post of posts" [routerLink]="[+post._id]">
+    <tr *ngFor="let post of posts | paginate: { itemsPerPage: 5, currentPage: p }" [routerLink]="[+post._id]">
     <td></td>
       <!-- <td class="table-id" style="color:blue"><b>{{ post._id }}</b></td> -->
       <td>{{ post.major }}</td>
@@ -57,5 +68,10 @@
     </tbody>
   </table>
 </div>
+<br/>
+<br/>
+<pagination-controls  (pageChange)="p = $event"></pagination-controls>
+
+
 
 

@@ -11,8 +11,12 @@ import { addBeacon } from './components/addbeacon.component.ts';
 import { FormsModule } from '@angular/forms';
 import { dashboardBeacon } from './components/dashboardbeacon.component.ts';
 import { UpdateBeacon } from './components/updatebeacon.component.ts';
+import {NgxPaginationModule} from 'ngx-pagination';
 // import { ChartsModule } from 'ng2-charts';
 // import '../../../../node_modules/chart.js/src/chart.js';
+import { PdfViewerComponent } from 'ng2-pdf-viewer';
+import { docsBeacon } from './components/docsbeacon.component.ts';
+import { AmChartsModule } from "amcharts3-angular2";
 @NgModule({
   imports: [
     CommonModule,
@@ -20,7 +24,9 @@ import { UpdateBeacon } from './components/updatebeacon.component.ts';
     Ng2SmartTableModule,
     NgaModule,
     FormsModule,
-    AgmCoreModule.forRoot({apiKey: 'AIzaSyBwQa0LEvba1MplMu9wHOyi5lso5b_x0eM' })
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyBwQa0LEvba1MplMu9wHOyi5lso5b_x0eM' }),
+    NgxPaginationModule,
+    AmChartsModule
     
     
   ],
@@ -29,7 +35,9 @@ import { UpdateBeacon } from './components/updatebeacon.component.ts';
     PostComponent,
     addBeacon,
     dashboardBeacon,
-    UpdateBeacon
+    UpdateBeacon,
+    PdfViewerComponent,
+    docsBeacon
   ],
   providers:[PostsService]
 })
