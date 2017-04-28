@@ -95,6 +95,29 @@ export const PAGES_MENU = [
           }
         }
       },
+          {
+      path: 'statistics',  // path for our page
+        data: { // custom menu declaration
+          menu: {
+            title: 'Statistics', // menu title
+            icon: 'ion-android-home', // menu icon
+            pathMatch: 'prefix', // use it if item children not displayed in menu
+            selected: false,
+            expanded: false,
+            order: 0
+          }
+        }/*,
+        children: [
+          {
+            path: 'users-interests',
+            data: {
+              menu: {
+                title: 'Users by interests',
+              }
+            }
+          }
+        ]*/
+      },
       // {
       //   path: 'new',  // path for our page
       //   data: { // custom menu declaration
