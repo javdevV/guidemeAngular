@@ -60,9 +60,9 @@ export const PAGES_MENU = [
       path: 'locations',  // path for our page
         data: { // custom menu declaration
           menu: {
-            title: 'Locations', // menu title
-            icon: 'ion-android-home', // menu icon
-             pathMatch: 'prefix', // use it if item children not displayed in menu
+           title: 'Locations', // menu title
+            icon: 'ion-map', // menu icon
+            pathMatch: 'prefix', // use it if item children not displayed in menu
             selected: false,
             expanded: false,
             order: 0
@@ -73,8 +73,8 @@ export const PAGES_MENU = [
       path: 'add-location',  // path for our page
         data: { // custom menu declaration
           menu: {
-            title: 'Add Location ', // menu title
-            icon: 'ion-android-home', // menu icon
+            title: 'New Location', // menu title
+            icon: 'ion-location', // menu icon
             pathMatch: 'prefix', // use it if item children not displayed in menu
             selected: false,
             expanded: false,
@@ -108,6 +108,23 @@ export const PAGES_MENU = [
       //     }
       //   }
       // },
+
+ {
+      path: 'weather-item',  // path for our page
+        data: { // custom menu declaration
+          menu: {
+           title: 'Weather', // menu title
+            icon: 'ion-map', // menu icon
+            pathMatch: 'prefix', // use it if item children not displayed in menu
+            selected: false,
+            expanded: false,
+            order: 0
+          }
+        }
+      },
+
+
+
        {
         path: 'categories',  // path for our page
         data: { // custom menu declaration

@@ -1,0 +1,53 @@
+<h1>TEST<h1>
+<sebm-google-map (mapClick)="getPosition($event)" [latitude]="location.latitude" [longitude]="location.longitude">
+  <sebm-google-map-marker (markerClick)="getCordinates($event)" [markerDraggable]="true" (dragEnd)="getCordinates($event)" [latitude]="location.latitude" [longitude]="location.longitude" ></sebm-google-map-marker>
+ 
+</sebm-google-map>
+  <h4>Latitude: {{pos1}}</h4>
+    <h4>Latitude:{{pos2}}</h4>
+<section>
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+ <div class="form-group has-success">
+ <label class="control-label" style="font-size: 20px;">Altitude</label>
+    <input class="col-lg-6  form-control" type="text" [(ngModel)]="pos1" value="{{location.latitude}}"  name="lat" disabled>
+
+    
+    <label class="control-label" style="font-size: 20px;">Longitude</label>
+    <input class="col-lg-6  form-control" type="text" [(ngModel)]="pos2"  value="{{location.latitude}}"  name="lng" disabled>
+
+            <button class="btn btn-primary btn-lg" type="submit">Add Location: </button>  
+        </div>
+    </form>
+</section>
+
+<section class="a">
+<div *ngFor="let weatherItem of weatherItems">
+  <div class="panel-heading" >
+    <h3>Summery: {{weatherItem.summery}}</h3> 
+
+  </div>
+
+
+
+  <div>
+   <strong>TimeZone: {{weatherItem.timezone}}</strong>
+    <ul class="list-group">
+      <li class="col-lg-6 form-control">
+        <h4>Temperature: {{((weatherItem.temperature-32)*5)/9}} °C</h4>
+      </li>
+      <li class="col-lg-6 form-control">
+        <h4>Wind: {{weatherItem.windSpeed}}</h4>
+      </li>
+       <li class="col-lg-6 form-control">
+        <h4>Humidity  : {{weatherItem.humidity}}%</h4>
+      </li>
+         <li class="col-lg-6 form-control">
+        <h4>Summery Details  : {{weatherItem.sum}}</h4>
+      </li>
+      <br>
+    </ul>
+
+  </div>
+  <br>
+</div>
+</section>

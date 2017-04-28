@@ -28,13 +28,16 @@ export class EditLocationComponent implements OnInit {
 
   ngOnInit() {
   	this.id=this.route.snapshot.params['id'];
-  	this.locationsService.getLocationDetails(this.id).subscribe(location=>{
+  	this.location=this.locationsService.getLocationDetails(this.id).subscribe(location=>{
   	
-		this.title=location.title;
-  		this.latitude=location.latitude;
-  		this.longitude=location.longitude;
-  		this.ouverture=this.ouverture;
-  			console.log(location);
+
+this.location=location;
+
+		// this.title=location.title;
+  // 		this.latitude=location.latitude;
+  // 		this.longitude=location.longitude;
+  // 		this.ouverture=this.ouverture;
+  // 			console.log(location);
   	});
   }
 

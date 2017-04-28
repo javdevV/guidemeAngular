@@ -2,6 +2,13 @@
 <h2 class="page-header">Edit Location</h2>
 
 
+
+<sebm-google-map [latitude]="location.latitude" [longitude]="location.longitude" >
+  <sebm-google-map-marker [latitude]="location.latitude" [longitude]="location.longitude"></sebm-google-map-marker>
+
+</sebm-google-map>
+
+
 <form (submit)="onEditSubmit()">
   <div class="form-group">
     <label>Title</label>

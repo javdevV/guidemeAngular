@@ -21,9 +21,10 @@
 
     </ul>
   </div>
-  <a class="btn btn-default" [routerLink]="['/pages/locations/locations/edit/'+location._id]">Edit</a>
-  <a class="btn btn-danger"  (click)="deleteLocation(location._id)">Delete</a>
+
 </div>
+  <a class="btn btn-warning" [routerLink]="['/pages/locations/locations/edit/'+location._id]">Edit</a>
+  <a class="btn btn-danger"  (click)="deleteLocation(location._id)">Delete</a>
 <sebm-google-map [latitude]="location.latitude" [longitude]="location.longitude" >
   <sebm-google-map-marker [latitude]="location.latitude" [longitude]="location.longitude"></sebm-google-map-marker>
 
