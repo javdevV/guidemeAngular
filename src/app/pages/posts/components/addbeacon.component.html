@@ -33,7 +33,12 @@
   <!-- <input type="submit" value="submit" class="btn btn-success" style="margin-left: 600px;margin-top:20px;width:100px;height:30px"> -->
 </form>
 
-<sebm-google-map (mapClick)="getPosition($event)" [latitude]="lat" [longitude]="lng" [zoom]="zoom" [backgroundColor]="backgroundColor" style="float:right">
-  <sebm-google-map-marker (markerClick)="getCordinates($event)" *ngFor=" let post of posts" [latitude]="post.lapti" [longitude]="post.longi" ></sebm-google-map-marker>
+<sebm-google-map (mapClick)="getPosition($event)" [latitude]="lat" [longitude]="lng"
+[zoom]="zoom" [disableDefaultUI]="false" [backgroundColor]="backgroundColor" 
+style="float:right" >
+  <sebm-google-map-marker *ngFor="let m of markers; let i = index"
+   (markerClick)="getCordinates($event)"  [latitude]="m.lat" [longitude]="m.lng"  [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)" >
+    
+  </sebm-google-map-marker>
 </sebm-google-map>
 </div>

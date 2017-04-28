@@ -4,6 +4,7 @@ import { PostComponent } from './components/post.component';
 import { addBeacon } from './components/addbeacon.component.ts';
 import { dashboardBeacon } from './components/dashboardbeacon.component.ts';
 import { UpdateBeacon } from './components/updatebeacon.component.ts';
+import { docsBeacon } from './components/docsbeacon.component.ts';
 const routes: Routes = [
   {
     path: '',
@@ -14,6 +15,7 @@ const routes: Routes = [
      { path: 'posts/:id', component:PostComponent },
      { path: 'posts/beacon/addbeacon', component:addBeacon },
       { path: 'posts/beacon/dashboardbeacon', component:dashboardBeacon },
+      { path: 'posts/beacon/docsbeacon', component:docsBeacon },
       { path: 'posts/update/:id', component:UpdateBeacon }
   
 ];

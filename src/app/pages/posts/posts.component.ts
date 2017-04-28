@@ -12,6 +12,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
   styleUrls:['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
+   
+   p: number = 1;
  posts: any = [];
   title: string = 'My first angular2-google-maps project';
   zoom:number=12;
@@ -64,7 +66,7 @@ this.postsService.getPostById(id);
 
 deleteBeacon(id) {
   this.postsService.deleteBeacon(id).then((result) => {
-    this.router.navigate(['/posts']);
+    this.router.navigate(['/posts/posts']);
   }, (err) => {
     console.log(err);
   });
