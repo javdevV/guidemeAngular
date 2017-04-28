@@ -37,10 +37,13 @@ export const routes: Routes = [
       { path: 'trackusers',  loadChildren: 'app/pages/trackusers/trackusers.module#TrackUsersModule' },
       { path: 'loginh',  loadChildren: 'app/pages/loginh/loginh.module#LoginHModule' },
       { path: 'loginv',  loadChildren: 'app/pages/loginv/loginv.module#LoginVModule' },
-        { path: 'tags',  loadChildren: 'app/pages/tags/tags.module#TagsModule' },
+       { path: 'tags',  loadChildren: 'app/pages/tags/tags.module#TagsModule' },
+      { path: 'trackusers',  loadChildren: 'app/pages/trackusers/trackusers.module#TrackUsersModule' },
+      { path: 'statistics',  loadChildren: 'app/pages/interests-stat/interests-stat.module#interestsStatModule' }
+//         { path: 'tags',  loadChildren: 'app/pages/tags/tags.module#TagsModule' },
        { path: 'weather-item',  loadChildren: 'app/pages/weather-item/weather-item.module#WeatherItemModule' },
       { path: 'trackusers',  loadChildren: 'app/pages/trackusers/trackusers.module#TrackUsersModule' }
-      ]
+       ]
   }
 ];
 
