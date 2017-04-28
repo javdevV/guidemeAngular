@@ -95,19 +95,6 @@ export const PAGES_MENU = [
           }
         }
       },
-          {
-      path: 'add-location',  // path for our page
-        data: { // custom menu declaration
-          menu: {
-            title: 'Add Location ', // menu title
-            icon: 'ion-android-home', // menu icon
-            pathMatch: 'prefix', // use it if item children not displayed in menu
-            selected: false,
-            expanded: false,
-            order: 0
-          }
-        }
-      },
       // {
       //   path: 'new',  // path for our page
       //   data: { // custom menu declaration
@@ -127,7 +114,7 @@ export const PAGES_MENU = [
         data: { // custom menu declaration
           menu: {
            title: 'Weather', // menu title
-            icon: 'ion-map', // menu icon
+            icon: 'ion-umbrella', // menu icon
             pathMatch: 'prefix', // use it if item children not displayed in menu
             selected: false,
             expanded: false,
