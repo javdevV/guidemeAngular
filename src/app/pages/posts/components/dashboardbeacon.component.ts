@@ -22,7 +22,8 @@ export class dashboardBeacon implements OnInit {
   
 this.postsService.CountBeacons().subscribe(num => {
       this.num = num;
-      console.log(this.num)
+      console.log(this.num);
+      
     });
 
 this.postsService.CountAllBeacons().subscribe(num1 => {
@@ -66,7 +67,7 @@ this.chart = this.AmCharts.makeChart("chartdiv", {
   },
   "dataProvider": [{
     "country": "6 éme arrondissement",
-    "nombre": 76
+    "nombre": 50
   }, {
     "country": "6 éme arrondissement",
     "nombre": 22
@@ -190,4 +191,7 @@ public handleRollOver(e){
   wedge.parentNode.appendChild(wedge);
 }
   
+
+
+
 }
