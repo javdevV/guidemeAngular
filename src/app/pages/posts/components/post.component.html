@@ -19,7 +19,10 @@
             <p>Minor-{{post.minor}} <em style="margin-left:70px">Major-{{post.major}}</em>
             </p>
             <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [backgroundColor]="backgroundColor" >
-  <sebm-google-map-marker [latitude]="post.lapti" [longitude]="post.longi" ></sebm-google-map-marker>
+  <sebm-google-map-marker [latitude]="post.lapti" [longitude]="post.longi" >
+    <sebm-google-map-info-window> <img src="https://static1.squarespace.com/static/50bce547e4b036c154f3ac8c/53396a61e4b0618579965b24/53396a62e4b0680594949f31/1396271715118/beacon_blue.png" alt="item" style="width:20px;height:20px;margin-left: 37px"/><br/><strong style="color:green">Adress:{{post.address}}
+<br> <b style="margin-left: 23px;color:blue">Minor-{{post.minor}}</b><br/><b  style="margin-left: 23px;color:blue">Major-{{post.major}}</b></strong></sebm-google-map-info-window>
+  </sebm-google-map-marker>
 </sebm-google-map>
            <!--  <button  *ngIf="post.state=='working'" class="add-to-cart" type="button" style="background-color: #DF0101;margin-right:40px">Out of order</button> -->
             <button  *ngIf="post.state=='success'" class="add-to-cart" type="button" style="background-color:#01DF01;margin-right:40px">working</button>
@@ -36,5 +39,5 @@
 </div>
 
 <button class="btn btn-info btn-lg"   (click)="deleteBeacon(post._id)"
- style="margin-left:1090px">Delete</button>
+ style="margin-left:1020px">Delete</button>
 

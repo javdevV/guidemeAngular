@@ -95,6 +95,7 @@ export const PAGES_MENU = [
           }
         }
       },
+
           {
       path: 'statistics',  // path for our page
         data: { // custom menu declaration
@@ -118,6 +119,7 @@ export const PAGES_MENU = [
           }
         ]*/
       },
+
       // {
       //   path: 'new',  // path for our page
       //   data: { // custom menu declaration
