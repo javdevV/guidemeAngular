@@ -12,8 +12,8 @@ export class TrackUsersComponent implements OnInit {
   title: string;
   lat: number;
   lng: number;
-  x:number=36.678418;
-  y:number = 10.809007;
+  x:number=36.806546;    
+  y:number = 10.170912;
 
   constructor(private us: TrackUsersService) {
     this.ngOnInit();
