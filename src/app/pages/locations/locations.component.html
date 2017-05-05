@@ -19,7 +19,10 @@
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
 
-        <tr *ngFor="let location of locations">
+        <!-- <tr *ngFor="let location of locations"> -->
+        <tbody>
+    <tr  align="center" *ngFor="let location of locations | paginate: { itemsPerPage: 5, currentPage: p }" [routerLink]="[+location._id]">
+  
           <td [routerLink]="[+location._id]">{{location.title}}</td>
 			<td>{{location.latitude}}</td>
 			<td>{{location.longitude}}</td>
@@ -29,12 +32,19 @@
       </tbody>
     </table>
   </div>
+<pagination-controls  (pageChange)="p = $event"></pagination-controls>
+
 
 
 <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [backgroundColor]="backgroundColor" >
-  <sebm-google-map-marker *ngFor=" let location of locations" [latitude]="location.latitude" [longitude]="location.longitude" ></sebm-google-map-marker>
+  <sebm-google-map-marker *ngFor=" let location of locations" [latitude]="location.latitude" [longitude]="location.longitude" >
+    
+     <sebm-google-map-info-window> <img src="{{location.img}}" min-width="350">
+<br>
+<a [routerLink]="[+location._id]" style="color:red">View</a>
+     </sebm-google-map-info-window>
+
+  </sebm-google-map-marker>
 </sebm-google-map>
-
-
 
 
